@@ -1,0 +1,227 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+  }
+  
+  header {
+    background: #ff9800;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+  }
+  
+  main {
+    padding: 1rem;
+  }
+  
+  form {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  input {
+    /* padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px; */
+
+    color: #fff;
+    background-color: #75b1ff;
+    border: none;
+    border-radius: 8px;
+    height: auto;
+    padding: 16px 20px;
+    text-decoration: none;
+    transition: all 0.1s ease-in-out;
+    box-shadow: 0 5px #3689b9;
+    cursor: pointer;
+    
+    outline-color: #ff9800;
+
+  }
+  
+  button {
+    color: #fff;
+    background-color: #75b1ff;
+    border: none;
+    border-radius: 8px;
+    height: auto;
+    padding: 16px 20px;
+    text-decoration: none;
+    transition: all 0.1s ease-in-out;
+    box-shadow: 0 5px #3689b9;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #c4811c;
+    margin-top: 1px;
+    box-shadow: none;
+  }
+  
+  #flashcards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .flashcard {
+    perspective: 1000px;
+    width: 150px;
+    height: 200px;
+    cursor: pointer;
+  }
+  
+  .card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateY(0);
+    transition: transform 0.6s;
+  }
+  
+  .card.flip {
+    transform: rotateY(180deg);
+  }
+  
+  .card-side {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .card-front {
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .card-back {
+    background-color: #ff9800;
+    color: white;
+    transform: rotateY(180deg);
+    text-align: center;
+  }
+  
+  /* Modal styles */
+/* Updated Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Darker background */
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 70%; /* Larger modal */
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  #close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  #next-card-btn {
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #eb6416;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #next-card-btn:hover {
+    background-color: #45a049;
+  }
+  
+  /* Card in Modal */
+  #modal-card {
+    perspective: 1000px;
+    width: 80%;
+    height: 60%;
+    position: relative;
+    margin-bottom: 1rem;
+  }
+  
+  #modal-card .card-side {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  #modal-card .card-front {
+    background-color: #2196f3;
+    color: white;
+  }
+  
+  #modal-card .card-back {
+    background-color: #ff9800;
+    color: white;
+    transform: rotateY(180deg);
+  }
+  
+  #modal-card.flip {
+    transform: rotateY(180deg);
+  }
+  
+  #modal-card {
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    transition: transform 0.6s;
+  }
+
+  #MyData{
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    bottom: 0;
+    right: 2%;
+  }
+
+  #MyData div{
+    padding: 20px;
+  }
+  

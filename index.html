@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vocabulary Flashcards</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Vocabulary Trainer</h1>
+    
+  </header>
+  
+  <main>
+    <!-- Form to add new words -->
+    <section id="add-word-section">
+      <h2>Add a New Word</h2>
+      <div>
+        <form id="word-form">
+            <input type="text" id="word" placeholder="Word" required>
+            <input type="text" id="meaning" placeholder="Meaning" required>
+            <button type="submit">Add Word</button>
+            <button id="start-test-btn">Play now!</button>
+          </form>
+          
+      </div>
+      
+     <div id="MyData">      
+      <!-- Nhập Xuất dữ liệu -->
+      <div>
+        <button id="export-btn">Export Json</button>
+        <input type="file" id="import-file" accept=".json" />
+        <button id="import-btn">Import Json</button>
+        
+      </div>
+     </div>
+    </section>
+
+    <!-- Flashcard Display -->
+    <section id="flashcards-section">
+      <h2>Your Flashcards</h2>
+      <div id="flashcards-container"></div>
+    </section>
+
+    <!-- Modal for Test Mode -->
+    <div id="test-modal" class="modal">
+        <div class="modal-content">
+        <span id="close-modal">&times;</span>
+        <div id="modal-card" class="card">
+            <div class="card-side card-front"></div>
+            <div class="card-side card-back"></div>
+        </div>
+        <button id="next-card-btn">Next</button>
+        </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
