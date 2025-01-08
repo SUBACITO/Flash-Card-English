@@ -153,8 +153,8 @@ body {
     cursor: pointer;
   }
   
-  #next-card-btn {
-    margin-top: 1rem;
+  #next-card-btn, #prev-card-btn {
+    margin: 1rem;
     padding: 0.75rem 1.5rem;
     background-color: #eb6416;
     color: white;
@@ -165,8 +165,8 @@ body {
     transition: background-color 0.3s ease;
   }
   
-  #next-card-btn:hover {
-    background-color: #45a049;
+  #next-card-btn:hover, #prev-card-btn:hover {
+    background-color: #a1bfec;
   }
   
   /* Card in Modal */
@@ -223,5 +223,19 @@ body {
 
   #MyData div{
     padding: 20px;
+  }
+
+  #card-per-total{
+    padding: 10px;
+    margin: 20px;
+    color: rgb(53, 51, 51);
+    font-size: 2em;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  .navigation{
+    display: flex;
   }
   

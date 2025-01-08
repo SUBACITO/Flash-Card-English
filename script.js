@@ -54,6 +54,8 @@ document.getElementById('word-form').addEventListener('submit', (e) => {
   const modal = document.getElementById('test-modal');
   const modalCard = document.getElementById('modal-card');
   const nextButton = document.getElementById('next-card-btn');
+  const prevButton = document.getElementById('prev-card-btn');
+  const card_per_total = document.getElementById('card-per-total');
   const closeButton = document.getElementById('close-modal');
   
   // Open Test Mode
@@ -82,11 +84,27 @@ document.getElementById('word-form').addEventListener('submit', (e) => {
     back.textContent = cardData.meaning;
   
     modalCard.classList.remove('flip');
+
+    card_per_total.innerHTML = (currentIndex+1) +"/" + flashcards.length;
   }
   
   // Next Flashcard
   nextButton.addEventListener('click', () => {
     currentIndex++;
+    card_per_total.innerHTML = (currentIndex+1) +"/" + flashcards.length;
+    if (currentIndex >= flashcards.length) {
+      alert("You've completed the test!");
+      modal.style.display = 'none';
+    } else {
+      showFlashcard();
+    }
+  });
+  
+  prevButton.addEventListener('click', () => {
+    if(currentIndex <= 0) return;
+    
+    currentIndex--;
+    card_per_total.innerHTML = (currentIndex+1) +"/" + flashcards.length;
     if (currentIndex >= flashcards.length) {
       alert("You've completed the test!");
       modal.style.display = 'none';

@@ -9,7 +9,7 @@
 <body>
   <header>
     <h1>Vocabulary Trainer</h1>
-    
+    <button id="start-test-btn">Play now!</button>
   </header>
   
   <main>
@@ -21,7 +21,6 @@
             <input type="text" id="word" placeholder="Word" required>
             <input type="text" id="meaning" placeholder="Meaning" required>
             <button type="submit">Add Word</button>
-            <button id="start-test-btn">Play now!</button>
           </form>
           
       </div>
@@ -46,12 +45,21 @@
     <!-- Modal for Test Mode -->
     <div id="test-modal" class="modal">
         <div class="modal-content">
+        <div id="card-per-total">
+         0/0
+        </div>
         <span id="close-modal">&times;</span>
         <div id="modal-card" class="card">
+            
             <div class="card-side card-front"></div>
             <div class="card-side card-back"></div>
         </div>
-        <button id="next-card-btn">Next</button>
+        <div class="navigation">
+          <button id="prev-card-btn">Previous</button>
+          <button id="next-card-btn">Next</button>
+        </div>
+        
+        
         </div>
     </div>
   </main>
